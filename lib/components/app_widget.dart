@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
+import '../screens/home_screen.dart';
+
 class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Container(color: Colors.blue),
+      debugShowCheckedModeBanner: false,
+      home: HomeScreen(),
     );
   }
 }
