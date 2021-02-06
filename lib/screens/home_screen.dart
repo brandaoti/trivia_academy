@@ -1,9 +1,22 @@
 import 'package:flutter/material.dart';
 
+import 'question_screen.dart';
+
 class HomeScreen extends StatelessWidget {
   //
   @override
   Widget build(BuildContext context) {
+    // ! Função para navegação de tela
+    void _questionScreen() {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (ctx) => QuestionScreen(),
+        ),
+      );
+    }
+
+    //
     return Scaffold(
       //
       body: Center(
@@ -39,7 +52,7 @@ class HomeScreen extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0)),
               ),
-              onPressed: () {},
+              onPressed: _questionScreen,
             ),
           ],
         ),
