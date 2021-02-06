@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../routes/app_routes.dart';
 import '../screens/home_screen.dart';
+import '../screens/question_screen.dart';
 
 class AppWidget extends StatelessWidget {
   @override
@@ -8,7 +10,12 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light(),
-      home: HomeScreen(),
+
+      // ! Setando rotas
+      routes: {
+        AppRoutes.HOME_SCREEN: (ctx) => HomeScreen(),
+        AppRoutes.QUESTION_SCREEN: (ctx) => QuestionScreen(),
+      },
     );
   }
 }
