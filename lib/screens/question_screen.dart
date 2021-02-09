@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trivia_academy/components/answers/answer.dart';
 import 'package:trivia_academy/components/answers/custom_answer.dart';
 
 // Tela de perguntas
@@ -36,7 +37,8 @@ class QuestionScreen extends StatelessWidget {
             ),
           ),
 
-          // Cria uma lista com a resposta das perguntas
+          // Instanciando lista com respostas.
+          Answer(),
         ],
       ),
     );

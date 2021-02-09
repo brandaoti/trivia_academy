@@ -2,31 +2,40 @@ import 'package:flutter/material.dart';
 
 class CustomAnswer extends StatelessWidget {
   final String title;
+  final int value;
+  final int groupValue;
+  final Function onChanged;
 
-  const CustomAnswer({Key key, this.title = ''}) : super(key: key);
+  const CustomAnswer({
+    Key key,
+    this.title = '',
+    this.value,
+    this.groupValue,
+    this.onChanged,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 23, horizontal: 16),
+      padding: EdgeInsets.symmetric(vertical: 14, horizontal: 16),
       margin: EdgeInsets.fromLTRB(32, 10, 32, 10),
       decoration: BoxDecoration(
-        //color: Colors.red,
-        borderRadius: BorderRadius.circular(8.0),
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.15),
-            blurRadius: 2,
+            color: Colors.grey.withOpacity(0.5),
+            blurRadius: 3,
             spreadRadius: 1,
-            offset: Offset(1, 2),
+            offset: Offset(1, 3),
           ),
         ],
       ),
       child: RadioListTile(
         title: Text(title),
-        value: null,
-        groupValue: null,
-        onChanged: null,
+        value: value,
+        groupValue: groupValue,
+        onChanged: onChanged,
       ),
     );
   }
