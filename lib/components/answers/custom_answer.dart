@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// Customizando layout para inserir respostas
 class CustomAnswer extends StatelessWidget {
   final String title;
   final int value;
@@ -8,10 +9,10 @@ class CustomAnswer extends StatelessWidget {
 
   const CustomAnswer({
     Key key,
-    this.title = '',
-    this.value,
-    this.groupValue,
-    this.onChanged,
+    @required this.title,
+    @required this.value,
+    @required this.groupValue,
+    @required this.onChanged,
   }) : super(key: key);
 
   @override
