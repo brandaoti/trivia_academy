@@ -6,20 +6,21 @@ class CustomAnswer extends StatelessWidget {
   final int value;
   final int groupValue;
   final Function onChanged;
-
+  final EdgeInsetsGeometry margin;
   const CustomAnswer({
     Key key,
     @required this.title,
     @required this.value,
     @required this.groupValue,
     @required this.onChanged,
+    this.margin = const EdgeInsets.fromLTRB(32, 10, 32, 10),
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 14, horizontal: 16),
-      margin: EdgeInsets.fromLTRB(32, 10, 32, 10),
+      margin: margin,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20),
