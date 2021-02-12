@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:trivia_academy/components/answers/answer.dart';
-import 'package:trivia_academy/components/answers/custom_answer.dart';
-import 'package:trivia_academy/models/answer_model.dart';
-import 'package:trivia_academy/models/question_model.dart';
+
+import '../components/answers/answer.dart';
+import '../models/answer_model.dart';
+import '../models/question_model.dart';
 
 // Tela de perguntas
 class QuestionScreen extends StatefulWidget {

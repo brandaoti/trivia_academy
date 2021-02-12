@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:trivia_academy/components/answers/custom_answer.dart';
-import 'package:trivia_academy/components/buttons/custom_button.dart';
-import 'package:trivia_academy/models/answer_model.dart';
-import 'package:trivia_academy/models/question_model.dart';
+
+import '../../models/question_model.dart';
+import 'custom_answer.dart';
 
 class Answer extends StatefulWidget {
   final List<QuestionModel> newList;
