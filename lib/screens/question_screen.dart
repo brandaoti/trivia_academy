@@ -13,8 +13,8 @@ class QuestionScreen extends StatefulWidget {
 }
 
 class _QuestionScreenState extends State<QuestionScreen> {
-  int groupValue = 0;
-  List<QuestionModel> newList = QuestionAnswersController.getQuestionList();
+  // int groupValue = 0;
+  // List<QuestionModel> newList = QuestionAnswersController.getQuestionList();
 
   @override
   Widget build(BuildContext context) {
@@ -55,20 +55,23 @@ class _QuestionScreenState extends State<QuestionScreen> {
 
       // body
 
-      body: Column(
-        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          // Instanciando lista com respostas.
-          Answer(
-            newList: newList,
-            onChanged: (newValue) {
-              setState(() {
-                groupValue = newValue;
-              });
-              // ! print(groupValue); OK
-            },
-          ),
-        ],
+      body: Container(
+        padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+        margin: EdgeInsets.fromLTRB(32, 56, 32, 56),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Pergunta 1',
+              style: TextStyle(fontSize: 16, color: Color(0xFF4C4C4C)),
+            ),
+
+            Text('lorem ipsum dolor sit amet consectetur adipiscing elit?'),
+            SizedBox(height: 20),
+
+            // ! Cria lista com as perguntas
+          ],
+        ),
       ),
     );
   }
