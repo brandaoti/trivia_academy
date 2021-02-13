@@ -18,7 +18,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
   Widget build(BuildContext context) {
     var newList = [
       QuestionModel(
-        question: 'O que é?',
+        question: 'O que é Flutter?',
         answers: [
           AnswerModel(
             title: 'Flutter?',
@@ -41,9 +41,10 @@ class _QuestionScreenState extends State<QuestionScreen> {
             groupValue: groupValue,
           ),
         ],
+        answer: 2,
       ),
       QuestionModel(
-        question: 'O que é?',
+        question: 'O que é Dart?',
         answers: [
           AnswerModel(
             title: 'Flutter?',
@@ -66,9 +67,10 @@ class _QuestionScreenState extends State<QuestionScreen> {
             groupValue: groupValue,
           ),
         ],
+        answer: 1,
       ),
       QuestionModel(
-        question: 'O que é?',
+        question: 'Unity?',
         answers: [
           AnswerModel(
             title: 'Flutter?',
@@ -91,6 +93,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
             groupValue: groupValue,
           ),
         ],
+        answer: 4,
       ),
     ];
 

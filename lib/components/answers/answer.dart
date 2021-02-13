@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trivia_academy/components/buttons/custom_button.dart';
 
 import '../../models/question_model.dart';
 import 'custom_answer.dart';
@@ -19,6 +20,13 @@ class Answer extends StatefulWidget {
 
 class _AnswerState extends State<Answer> {
   PageController pageController = PageController(initialPage: 0);
+  // List<QuestionModel> questionList;
+
+  int answer = 0;
+  int score = 0;
+
+  // Métdo para verificar a resposta
+  void verifyResponse() {}
 
   @override
   // ignore: must_call_super
@@ -34,7 +42,7 @@ class _AnswerState extends State<Answer> {
     return Column(
       children: [
         Container(
-          height: 580,
+          height: 650,
           child: PageView.builder(
             physics: NeverScrollableScrollPhysics(),
             controller: pageController,
@@ -45,15 +53,18 @@ class _AnswerState extends State<Answer> {
 
               return Container(
                 // padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                margin: EdgeInsets.fromLTRB(32, 56, 32, 10),
+                margin: EdgeInsets.fromLTRB(32, 56, 32, 56),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     // Cria lista de perguntas
+
                     Text(
                       item.question,
-                      style: TextStyle(fontSize: 12, color: Color(0xFF4C4C4C)),
+                      style: TextStyle(fontSize: 16, color: Color(0xFF4C4C4C)),
                     ),
+
+                    SizedBox(height: 20),
 
                     // ! Cria lista com as perguntas
                     ListView.builder(
@@ -65,7 +76,7 @@ class _AnswerState extends State<Answer> {
                         var answer = item.answers[index];
 
                         return CustomAnswer(
-                          margin: EdgeInsets.symmetric(vertical: 20),
+                          margin: EdgeInsets.symmetric(vertical: 10),
                           title: answer.title,
                           value: answer.value,
                           groupValue: answer.groupValue,
@@ -81,12 +92,27 @@ class _AnswerState extends State<Answer> {
         ),
         //
         Container(
-          height: 50,
+          height: 80,
+          width: MediaQuery.of(context).size.width,
+          alignment: Alignment.centerLeft,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.5),
+                spreadRadius: 1,
+                blurRadius: 3,
+                offset: Offset(0, -1),
+              ),
+            ],
+          ),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              FlatButton(
-                child: Text('Deu ruim'),
+              CustomButton(
+                name: '<<',
+                borderRadius: BorderRadius.circular(20),
+                padding: EdgeInsets.symmetric(horizontal: 60, vertical: 11),
                 onPressed: () {
                   setState(() {
                     pageController.previousPage(
@@ -96,10 +122,14 @@ class _AnswerState extends State<Answer> {
                   });
                 },
               ),
-              FlatButton(
-                child: Text('deu bom'),
+              CustomButton(
+                name: '>>',
+                borderRadius: BorderRadius.circular(20),
+                padding: EdgeInsets.symmetric(horizontal: 60, vertical: 11),
                 onPressed: () {
                   setState(() {
+                    verifyResponse();
+                    answer = 0;
                     pageController.nextPage(
                       duration: Duration(milliseconds: 300),
                       curve: Curves.easeOut,
