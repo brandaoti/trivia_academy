@@ -9,14 +9,14 @@ class QuestionModel {
 
   QuestionModel({
     @required this.question,
-    @required this.answer,
     @required this.answers,
+    @required this.answer,
   });
 
   QuestionModel copyWith({
     String question,
-    int answer,
     List<AnswerModel> answers,
+    int answer,
   }) =>
       QuestionModel(
         question: question ?? this.question,
@@ -24,6 +24,13 @@ class QuestionModel {
         answers: answers ?? this.answers,
       );
 }
+
+// QuestionModel({
+//     @required this.question,
+//     @required this.answer,
+//     @required this.answers,
+//   });
+
 // {
 //   "question": "XX",
 //   "answers": [

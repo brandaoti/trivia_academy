@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trivia_academy/controllers/question_answers_controller.dart';
 
 import '../components/answers/answer.dart';
 import '../models/answer_model.dart';
@@ -13,89 +14,37 @@ class QuestionScreen extends StatefulWidget {
 
 class _QuestionScreenState extends State<QuestionScreen> {
   int groupValue = 0;
+  List<QuestionModel> newList = QuestionAnswersController.getQuestionList();
 
   @override
   Widget build(BuildContext context) {
-    var newList = [
-      QuestionModel(
-        question: 'O que é Flutter?',
-        answers: [
-          AnswerModel(
-            title: 'Flutter?',
-            value: 1,
-            groupValue: groupValue,
-          ),
-          AnswerModel(
-            title: 'Dart?',
-            value: 2,
-            groupValue: groupValue,
-          ),
-          AnswerModel(
-            title: 'Unity?',
-            value: 3,
-            groupValue: groupValue,
-          ),
-          AnswerModel(
-            title: 'C#?',
-            value: 4,
-            groupValue: groupValue,
-          ),
-        ],
-        answer: 2,
-      ),
-      QuestionModel(
-        question: 'O que é Dart?',
-        answers: [
-          AnswerModel(
-            title: 'Flutter?',
-            value: 1,
-            groupValue: groupValue,
-          ),
-          AnswerModel(
-            title: 'Dart?',
-            value: 2,
-            groupValue: groupValue,
-          ),
-          AnswerModel(
-            title: 'Unity?',
-            value: 3,
-            groupValue: groupValue,
-          ),
-          AnswerModel(
-            title: 'C#?',
-            value: 4,
-            groupValue: groupValue,
-          ),
-        ],
-        answer: 1,
-      ),
-      QuestionModel(
-        question: 'Unity?',
-        answers: [
-          AnswerModel(
-            title: 'Flutter?',
-            value: 1,
-            groupValue: groupValue,
-          ),
-          AnswerModel(
-            title: 'Daaaart?',
-            value: 2,
-            groupValue: groupValue,
-          ),
-          AnswerModel(
-            title: 'sdad?',
-            value: 3,
-            groupValue: groupValue,
-          ),
-          AnswerModel(
-            title: 'Dasdsa',
-            value: 4,
-            groupValue: groupValue,
-          ),
-        ],
-        answer: 4,
-      ),
-    ];
+    // var newList = [
+    //   QuestionModel(
+    //     question: 'O que é Flutter?',
+    //     answers: [
+    //       AnswerModel(
+    //         title: 'Flutter?',
+    //         value: 1,
+    //         groupValue: groupValue,
+    //       ),
+    //       AnswerModel(
+    //         title: 'Dart?',
+    //         value: 2,
+    //         groupValue: groupValue,
+    //       ),
+    //       AnswerModel(
+    //         title: 'Unity?',
+    //         value: 3,
+    //         groupValue: groupValue,
+    //       ),
+    //       AnswerModel(
+    //         title: 'C#?',
+    //         value: 4,
+    //         groupValue: groupValue,
+    //       ),
+    //     ],
+    //   )
+    // ];
 
     return Scaffold(
       appBar: AppBar(
