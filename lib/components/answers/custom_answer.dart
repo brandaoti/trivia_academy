@@ -7,6 +7,8 @@ class CustomAnswer extends StatelessWidget {
   final int groupValue;
   final Function onChanged;
   final EdgeInsetsGeometry margin;
+
+  //
   const CustomAnswer({
     Key key,
     @required this.title,
