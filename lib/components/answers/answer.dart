@@ -41,7 +41,7 @@ class _AnswerState extends State<Answer> {
                 },
               ),
               CustomAnswer(
-                title: item.option1,
+                title: item.option2,
                 value: 2,
                 groupValue: groupValue,
                 onChanged: (newValue) {
@@ -51,7 +51,7 @@ class _AnswerState extends State<Answer> {
                 },
               ),
               CustomAnswer(
-                title: item.option1,
+                title: item.option3,
                 value: 3,
                 groupValue: groupValue,
                 onChanged: (newValue) {
@@ -61,7 +61,7 @@ class _AnswerState extends State<Answer> {
                 },
               ),
               CustomAnswer(
-                title: item.option1,
+                title: item.option4,
                 value: 4,
                 groupValue: groupValue,
                 onChanged: (newValue) {

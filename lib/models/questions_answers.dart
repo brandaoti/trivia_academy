@@ -17,10 +17,10 @@ class QuestionAndAnswer {
     questions.add(
       QuestionAndAnswer(
         'O que é Flutter?',
-        'SDK',
-        'Linguagem de programação',
-        'Uma engine de jogos',
-        'Uma peixe',
+        'Uma linguagem de programação.',
+        'Um framework para desenvolvimento de aplicações mobile, web e desktop.',
+        'Um framework desenvolvido exclusivamente para criação de sites.',
+        'Nda.',
         1,
       ),
     );

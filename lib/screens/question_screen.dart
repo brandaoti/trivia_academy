@@ -29,6 +29,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
 
       // body
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Criando container com perguntas
           Container(
