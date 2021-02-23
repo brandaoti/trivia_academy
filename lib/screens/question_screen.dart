@@ -20,6 +20,16 @@ class _QuestionScreenState extends State<QuestionScreen> {
   // Armazena o valor da resposta
   int groupValue = 0;
 
+  int score = 0; // Armazena os pontos
+  int index = 0; // Responsavel por carregar as questions da lista
+
+  // função para verificar aplicar e verificar resposta
+  // void _verifyReponse() {
+  //   if (groupValue == questionList[index].answer) {
+  //     score += 1;
+  //   }
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,12 +53,12 @@ class _QuestionScreenState extends State<QuestionScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Pergunta 1',
+                  'Pergunta ${index + 1}',
                   style: TextStyle(fontSize: 12, color: Color(0xFF4C4C4C)),
                 ),
                 SizedBox(height: 10),
                 Text(
-                  questionList[0].question,
+                  questionList[index].question,
                   style: TextStyle(
                     fontSize: 16,
                     color: Color(0xFF4C4C4C),
@@ -61,18 +71,6 @@ class _QuestionScreenState extends State<QuestionScreen> {
 
           // * instanciar answers
           Answer(),
-
-          // * Instanciar Botão responder
-          CustomContainerBoxShadow(
-            // height: 100,
-            child: Center(
-              child: CustomButton(
-                borderRadius: BorderRadius.circular(20),
-                name: 'Responder',
-                onPressed: () {},
-              ),
-            ),
-          ),
         ],
       ),
     );

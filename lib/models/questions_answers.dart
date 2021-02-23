@@ -14,6 +14,7 @@ class QuestionAndAnswer {
   static List<QuestionAndAnswer> getQuestionList() {
     List<QuestionAndAnswer> questions = [];
 
+    // 0
     questions.add(
       QuestionAndAnswer(
         'O que é Flutter?',
@@ -24,6 +25,17 @@ class QuestionAndAnswer {
         1,
       ),
     );
+    // 1
+    // questions.add(
+    //   QuestionAndAnswer(
+    //     'Qual linguagem de programação é usado pelo Flutter?',
+    //     'Javascript.',
+    //     'Dart.',
+    //     'C#.',
+    //     'Java.',
+    //     2,
+    //   ),
+    // );
 
     return questions;
   }
