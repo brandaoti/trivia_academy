@@ -20,7 +20,7 @@ class QuestionAndAnswer {
         'Uma linguagem de programação.',
         'Um framework para desenvolvimento de aplicações mobile, web e desktop.',
         'Um framework desenvolvido exclusivamente para criação de sites.',
-        'Nda.',
+        'Uma engine de jogos',
         1,
       ),
     );

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:trivia_academy/components/answers/answer.dart';
 import 'package:trivia_academy/components/answers/custom_answer.dart';
+import 'package:trivia_academy/components/buttons/custom_button.dart';
+import 'package:trivia_academy/components/custom_boxshadow.dart';
 import 'package:trivia_academy/controllers/question_answers_controller.dart';
 import 'package:trivia_academy/models/question_model.dart';
 import 'package:trivia_academy/models/questions_answers.dart';
@@ -59,6 +61,18 @@ class _QuestionScreenState extends State<QuestionScreen> {
 
           // * instanciar answers
           Answer(),
+
+          // * Instanciar Botão responder
+          CustomContainerBoxShadow(
+            // height: 100,
+            child: Center(
+              child: CustomButton(
+                borderRadius: BorderRadius.circular(20),
+                name: 'Responder',
+                onPressed: () {},
+              ),
+            ),
+          ),
         ],
       ),
     );
