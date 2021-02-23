@@ -5,18 +5,18 @@ class CustomButton extends StatelessWidget {
   final String name;
   final Function onPressed;
   final Color primary, onPrimary;
-  final EdgeInsetsGeometry padding;
+  // final EdgeInsetsGeometry padding;
   final BorderRadiusGeometry borderRadius;
 
   //
   const CustomButton({
     Key key,
-    this.name,
+    @required this.name,
     this.primary,
     this.onPrimary,
-    this.padding,
+    // this.padding,
     this.borderRadius,
-    this.onPressed,
+    @required this.onPressed,
   }) : super(key: key);
 
   @override
@@ -26,7 +26,7 @@ class CustomButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         primary: primary,
         onPrimary: onPrimary,
-        padding: padding,
+        // padding: padding,
         shape: RoundedRectangleBorder(borderRadius: borderRadius),
       ),
       onPressed: onPressed,
