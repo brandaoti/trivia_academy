@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trivia_academy/components/buttons/custom_button.dart';
+import '../components/buttons/custom_button.dart';
 
 import 'question_screen.dart';
 

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:trivia_academy/components/buttons/custom_button.dart';
-import 'package:trivia_academy/components/custom_boxshadow.dart';
-import 'package:trivia_academy/components/quiz/answers/custom_answer.dart';
 
-import 'package:trivia_academy/components/quiz/questions/question.dart';
-import 'package:trivia_academy/models/questions_answers.dart';
-import 'package:trivia_academy/routes/app_routes.dart';
-import 'package:trivia_academy/screens/result_screen.dart';
+import '../../models/questions_answers.dart';
+import '../../screens/result_screen.dart';
+import '../buttons/custom_button.dart';
+import '../custom_boxshadow.dart';
+import 'answers/custom_answer.dart';
+import 'questions/question.dart';
 
 class Quiz extends StatefulWidget {
   //

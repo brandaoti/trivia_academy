@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:trivia_academy/components/buttons/custom_button.dart';
-import 'package:trivia_academy/components/custom_boxshadow.dart';
-import 'package:trivia_academy/routes/app_routes.dart';
+import '../components/buttons/custom_button.dart';
+import '../components/custom_boxshadow.dart';
+import '../routes/app_routes.dart';
 
 class ResultScreen extends StatefulWidget {
   //

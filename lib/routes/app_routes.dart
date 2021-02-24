@@ -1,4 +1,5 @@
 // ! configurando caminho de navegação entre telas
+
 class AppRoutes {
   //
   static const LOADING_SCREEN = '/'; // ! A raiz vai ser a tela splash
