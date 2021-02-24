@@ -5,16 +5,17 @@ import 'package:trivia_academy/components/quiz/answers/custom_answer.dart';
 
 import 'package:trivia_academy/components/quiz/questions/question.dart';
 import 'package:trivia_academy/models/questions_answers.dart';
+import 'package:trivia_academy/routes/app_routes.dart';
 
 class Quiz extends StatefulWidget {
   //
-  final int selectQuestion; // Responsavel por carregar as questions da lista
-  final Function onResponse;
+  // final int selectQuestion; // Responsavel por carregar as questions da lista
+  // final Function onResponse;
 
   const Quiz({
     Key key,
-    this.selectQuestion,
-    this.onResponse,
+    // this.selectQuestion,
+    // this.onResponse,
   }) : super(key: key);
 
   @override
@@ -27,25 +28,41 @@ class _QuizState extends State<Quiz> {
   //
   int groupValue = 0;
 
-  // int score = 0; // Armazena os pontos
-  // int index = 0; // Responsavel por carregar as questions da lista
+  int _score = 0; // Armazena os pontos
+  int _selectQuestion = 0; // Responsavel por carregar as questions da lista
 
-  // função para verificar aplicar e verificar resposta
-  // void _verifyReponse() {
-  //   if (groupValue == questionList[widget.selectQuestion].answer) {
-  //     score += 1;
-  //   }
-  // }
+  // função para responder
+  void _onResponse() {
+    if (groupValue == questionList[_selectQuestion].answer) {
+      _score += 1;
+    }
+    _onVerifyResponse();
+  }
 
-  // Função para verificar se tem perguntas
-  // bool get anyQuestions {
-  //   return widget.selectQuestion < questionList.length;
-  // }
+  // Função para verificar se ainda tem pergunta
+  void _onVerifyResponse() {
+    //
+    if (anyQuestions) {
+      setState(() {
+        _selectQuestion++;
+      });
+    } else {
+      Navigator.of(context).pushReplacementNamed(AppRoutes.HOME_SCREEN);
+    }
+
+    // Limpar caixa de seleção das resposta
+    groupValue = 0;
+  }
+
+  // Função para verificar se ainda tem perguntas disponiveis
+  bool get anyQuestions {
+    return _selectQuestion < questionList.length - 1;
+  }
 
   @override
   Widget build(BuildContext context) {
     //
-    var item = questionList[widget.selectQuestion];
+    var item = questionList[_selectQuestion];
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -58,8 +75,8 @@ class _QuizState extends State<Quiz> {
           child: Column(
             children: [
               Question(
-                questionIndex: 'Pergunta ${widget.selectQuestion + 1}',
-                question: questionList[widget.selectQuestion].question,
+                questionIndex: 'Pergunta ${_selectQuestion + 1}',
+                question: questionList[_selectQuestion].question,
               ),
             ],
           ),
@@ -128,10 +145,7 @@ class _QuizState extends State<Quiz> {
             child: CustomButton(
               borderRadius: BorderRadius.circular(20),
               name: 'Responder',
-              onPressed: () {
-                widget.onResponse();
-                groupValue = 0;
-              },
+              onPressed: () => _onResponse(),
             ),
           ),
         ),

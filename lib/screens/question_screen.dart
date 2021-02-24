@@ -20,42 +20,17 @@ class _QuestionScreenState extends State<QuestionScreen> {
   int _score = 0; // Armazena os pontos
   int _selectQuestion = 0; // Seleciona as perguntsa
 
-  // Função para verificar se ainda tem perguntas disponiveis
-  bool get anyQuestions {
-    return _selectQuestion < questionList.length;
-  }
-
-  // Função para verificar e responder
-  void _verifyResponde() {
-    if (anyQuestions) {
-      setState(() {
-        _selectQuestion++;
-        _score += 1;
-      });
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Perguntas'),
-        centerTitle: true,
-        // backgroundColor: Color(0xFF374952),
-      ),
+        appBar: AppBar(
+          title: Text('Perguntas'),
+          centerTitle: true,
+          // backgroundColor: Color(0xFF374952),
+        ),
 
-      //
-      body: anyQuestions
-          ? Quiz(
-              selectQuestion: _selectQuestion,
-              onResponse: _verifyResponde,
-            )
-          : Center(
-              child: Text(
-                '$_score',
-              ),
-            ),
-    );
+        //
+        body: Quiz());
   }
 }
 
