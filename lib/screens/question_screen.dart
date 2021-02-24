@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:trivia_academy/components/buttons/custom_button.dart';
-import 'package:trivia_academy/components/custom_boxshadow.dart';
-import 'package:trivia_academy/components/quiz/quiz.dart';
-import 'package:trivia_academy/controllers/question_answers_controller.dart';
-import 'package:trivia_academy/models/question_model.dart';
-import 'package:trivia_academy/models/questions_answers.dart';
+import '../components/quiz/quiz.dart';
 
 // Tela de perguntas
 class QuestionScreen extends StatefulWidget {
@@ -15,47 +10,22 @@ class QuestionScreen extends StatefulWidget {
 
 class _QuestionScreenState extends State<QuestionScreen> {
   //
-  List<QuestionAndAnswer> questionList = QuestionAndAnswer.getQuestionList();
+  // List<QuestionAndAnswer> questionList = QuestionAndAnswer.getQuestionList();
 
-  int _score = 0; // Armazena os pontos
-  int _selectQuestion = 0; // Seleciona as perguntsa
-
-  // Função para verificar se ainda tem perguntas disponiveis
-  bool get anyQuestions {
-    return _selectQuestion < questionList.length;
-  }
-
-  // Função para verificar e responder
-  void _verifyResponde() {
-    if (anyQuestions) {
-      setState(() {
-        _selectQuestion++;
-        _score += 1;
-      });
-    }
-  }
+  // int _score = 0; // Armazena os pontos
+  // int _selectQuestion = 0; // Seleciona as perguntsa
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Perguntas'),
-        centerTitle: true,
-        // backgroundColor: Color(0xFF374952),
-      ),
+        appBar: AppBar(
+          title: Text('Perguntas'),
+          centerTitle: true,
+          // backgroundColor: Color(0xFF374952),
+        ),
 
-      //
-      body: anyQuestions
-          ? Quiz(
-              selectQuestion: _selectQuestion,
-              onResponse: _verifyResponde,
-            )
-          : Center(
-              child: Text(
-                '$_score',
-              ),
-            ),
-    );
+        //
+        body: Quiz());
   }
 }
 
