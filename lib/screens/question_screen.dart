@@ -3,6 +3,7 @@ import 'package:trivia_academy/components/answers/answer.dart';
 import 'package:trivia_academy/components/answers/custom_answer.dart';
 import 'package:trivia_academy/components/buttons/custom_button.dart';
 import 'package:trivia_academy/components/custom_boxshadow.dart';
+import 'package:trivia_academy/components/quiz.dart';
 import 'package:trivia_academy/controllers/question_answers_controller.dart';
 import 'package:trivia_academy/models/question_model.dart';
 import 'package:trivia_academy/models/questions_answers.dart';
@@ -14,22 +15,6 @@ class QuestionScreen extends StatefulWidget {
 }
 
 class _QuestionScreenState extends State<QuestionScreen> {
-  //
-  List<QuestionAndAnswer> questionList = QuestionAndAnswer.getQuestionList();
-
-  // Armazena o valor da resposta
-  int groupValue = 0;
-
-  int score = 0; // Armazena os pontos
-  int index = 0; // Responsavel por carregar as questions da lista
-
-  // função para verificar aplicar e verificar resposta
-  // void _verifyReponse() {
-  //   if (groupValue == questionList[index].answer) {
-  //     score += 1;
-  //   }
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,43 +24,47 @@ class _QuestionScreenState extends State<QuestionScreen> {
         // backgroundColor: Color(0xFF374952),
       ),
 
-      // body
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Criando container com perguntas
-          Container(
-            // color: Colors.red,
-            padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-            margin: EdgeInsets.fromLTRB(32, 56, 32, 10),
-            // color: Colors.red,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Pergunta ${index + 1}',
-                  style: TextStyle(fontSize: 12, color: Color(0xFF4C4C4C)),
-                ),
-                SizedBox(height: 10),
-                Text(
-                  questionList[index].question,
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Color(0xFF4C4C4C),
-                  ),
-                ),
-                // !
-              ],
-            ),
-          ),
-
-          // * instanciar answers
-          Answer(),
-        ],
-      ),
+      //
+      body: Quiz(),
     );
   }
 }
+
+// body
+// body: Column(
+//   crossAxisAlignment: CrossAxisAlignment.start,
+//   children: [
+//     // Criando container com perguntas
+//     Container(
+//       // color: Colors.red,
+//       // padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+//       // margin: EdgeInsets.fromLTRB(32, 56, 32, 10),
+//       // color: Colors.red,
+//       child: Column(
+//         // crossAxisAlignment: CrossAxisAlignment.start,
+//         children: [
+//           //   Text(
+//           //     'Pergunta ${index + 1}',
+//           //     style: TextStyle(fontSize: 12, color: Color(0xFF4C4C4C)),
+//           //   ),
+//           //   SizedBox(height: 10),
+//           //   Text(
+//           //     questionList[index].question,
+//           //     style: TextStyle(
+//           //       fontSize: 16,
+//           //       color: Color(0xFF4C4C4C),
+//           //     ),
+//           //   ),
+//           // !
+//         ],
+//       ),
+//     ),
+//     Quiz(),
+
+//     // * instanciar answers
+//     // Answer(),
+//   ],
+// ),
 
 // CustomAnswer(
 //                       margin: EdgeInsets.fromLTRB(0, 5, 0, 5),

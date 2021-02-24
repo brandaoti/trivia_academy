@@ -26,16 +26,16 @@ class QuestionAndAnswer {
       ),
     );
     // 1
-    // questions.add(
-    //   QuestionAndAnswer(
-    //     'Qual linguagem de programação é usado pelo Flutter?',
-    //     'Javascript.',
-    //     'Dart.',
-    //     'C#.',
-    //     'Java.',
-    //     2,
-    //   ),
-    // );
+    questions.add(
+      QuestionAndAnswer(
+        'Qual linguagem de programação é usado pelo Flutter?',
+        'Javascript.',
+        'Dart.',
+        'C#.',
+        'Java.',
+        2,
+      ),
+    );
 
     return questions;
   }
