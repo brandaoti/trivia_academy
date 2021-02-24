@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:trivia_academy/components/answers/answer.dart';
 import 'package:trivia_academy/components/buttons/custom_button.dart';
 import 'package:trivia_academy/components/custom_boxshadow.dart';
-import 'package:trivia_academy/components/questions/question.dart';
-import 'package:trivia_academy/models/questions_answers.dart';
+import 'package:trivia_academy/components/quiz/answers/custom_answer.dart';
 
-import 'answers/custom_answer.dart';
+import 'package:trivia_academy/components/quiz/questions/question.dart';
+import 'package:trivia_academy/models/questions_answers.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({Key key}) : super(key: key);

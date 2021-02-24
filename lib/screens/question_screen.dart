@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:trivia_academy/components/answers/answer.dart';
-import 'package:trivia_academy/components/answers/custom_answer.dart';
+
 import 'package:trivia_academy/components/buttons/custom_button.dart';
 import 'package:trivia_academy/components/custom_boxshadow.dart';
-import 'package:trivia_academy/components/quiz.dart';
+import 'package:trivia_academy/components/quiz/quiz.dart';
 import 'package:trivia_academy/controllers/question_answers_controller.dart';
 import 'package:trivia_academy/models/question_model.dart';
 import 'package:trivia_academy/models/questions_answers.dart';
