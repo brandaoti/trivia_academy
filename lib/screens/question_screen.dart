@@ -17,9 +17,22 @@ class _QuestionScreenState extends State<QuestionScreen> {
   //
   List<QuestionAndAnswer> questionList = QuestionAndAnswer.getQuestionList();
 
+  int _score = 0; // Armazena os pontos
+  int _selectQuestion = 0; // Seleciona as perguntsa
+
   // Função para verificar se ainda tem perguntas disponiveis
-  bool get temPerguntas {
-    return null;
+  bool get anyQuestions {
+    return _selectQuestion < questionList.length;
+  }
+
+  // Função para verificar e responder
+  void _verifyResponde() {
+    if (anyQuestions) {
+      setState(() {
+        _selectQuestion++;
+        _score += 1;
+      });
+    }
   }
 
   @override
@@ -32,7 +45,16 @@ class _QuestionScreenState extends State<QuestionScreen> {
       ),
 
       //
-      body: Quiz(),
+      body: anyQuestions
+          ? Quiz(
+              selectQuestion: _selectQuestion,
+              onResponse: _verifyResponde,
+            )
+          : Center(
+              child: Text(
+                '$_score',
+              ),
+            ),
     );
   }
 }

@@ -9,8 +9,13 @@ import 'package:trivia_academy/models/questions_answers.dart';
 class Quiz extends StatefulWidget {
   //
   final int selectQuestion; // Responsavel por carregar as questions da lista
+  final Function onResponse;
 
-  const Quiz({Key key, this.selectQuestion}) : super(key: key);
+  const Quiz({
+    Key key,
+    this.selectQuestion,
+    this.onResponse,
+  }) : super(key: key);
 
   @override
   _QuizState createState() => _QuizState();
@@ -22,20 +27,20 @@ class _QuizState extends State<Quiz> {
   //
   int groupValue = 0;
 
-  int score = 0; // Armazena os pontos
+  // int score = 0; // Armazena os pontos
   // int index = 0; // Responsavel por carregar as questions da lista
 
   // função para verificar aplicar e verificar resposta
-  void _verifyReponse() {
-    if (groupValue == questionList[widget.selectQuestion].answer) {
-      score += 1;
-    }
-  }
+  // void _verifyReponse() {
+  //   if (groupValue == questionList[widget.selectQuestion].answer) {
+  //     score += 1;
+  //   }
+  // }
 
   // Função para verificar se tem perguntas
-  bool get temPergunta {
-    return null;
-  }
+  // bool get anyQuestions {
+  //   return widget.selectQuestion < questionList.length;
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -123,7 +128,10 @@ class _QuizState extends State<Quiz> {
             child: CustomButton(
               borderRadius: BorderRadius.circular(20),
               name: 'Responder',
-              onPressed: null,
+              onPressed: () {
+                widget.onResponse();
+                groupValue = 0;
+              },
             ),
           ),
         ),
