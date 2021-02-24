@@ -7,7 +7,10 @@ import 'package:trivia_academy/components/quiz/questions/question.dart';
 import 'package:trivia_academy/models/questions_answers.dart';
 
 class Quiz extends StatefulWidget {
-  const Quiz({Key key}) : super(key: key);
+  //
+  final int selectQuestion; // Responsavel por carregar as questions da lista
+
+  const Quiz({Key key, this.selectQuestion}) : super(key: key);
 
   @override
   _QuizState createState() => _QuizState();
@@ -20,19 +23,24 @@ class _QuizState extends State<Quiz> {
   int groupValue = 0;
 
   int score = 0; // Armazena os pontos
-  int index = 0; // Responsavel por carregar as questions da lista
+  // int index = 0; // Responsavel por carregar as questions da lista
 
   // função para verificar aplicar e verificar resposta
   void _verifyReponse() {
-    if (groupValue == questionList[index].answer) {
+    if (groupValue == questionList[widget.selectQuestion].answer) {
       score += 1;
     }
+  }
+
+  // Função para verificar se tem perguntas
+  bool get temPergunta {
+    return null;
   }
 
   @override
   Widget build(BuildContext context) {
     //
-    var item = questionList[index];
+    var item = questionList[widget.selectQuestion];
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,8 +53,8 @@ class _QuizState extends State<Quiz> {
           child: Column(
             children: [
               Question(
-                questionIndex: 'Pergunta ${index + 1}',
-                question: questionList[index].question,
+                questionIndex: 'Pergunta ${widget.selectQuestion + 1}',
+                question: questionList[widget.selectQuestion].question,
               ),
             ],
           ),
@@ -115,12 +123,7 @@ class _QuizState extends State<Quiz> {
             child: CustomButton(
               borderRadius: BorderRadius.circular(20),
               name: 'Responder',
-              onPressed: () {
-                setState(() {
-                  _verifyReponse();
-                  index += 1;
-                });
-              },
+              onPressed: null,
             ),
           ),
         ),

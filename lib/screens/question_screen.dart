@@ -14,6 +14,14 @@ class QuestionScreen extends StatefulWidget {
 }
 
 class _QuestionScreenState extends State<QuestionScreen> {
+  //
+  List<QuestionAndAnswer> questionList = QuestionAndAnswer.getQuestionList();
+
+  // Função para verificar se ainda tem perguntas disponiveis
+  bool get temPerguntas {
+    return null;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
