@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trivia_academy/components/buttons/custom_button.dart';
 
 import 'question_screen.dart';
 
@@ -43,15 +44,9 @@ class HomeScreen extends StatelessWidget {
             SizedBox(height: 88.0),
 
             //
-            ElevatedButton(
-              child: Text('Começar'),
-              style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.fromLTRB(60, 11, 60, 11),
-                primary: Color(0xFFDA0175),
-                onPrimary: Color(0xFFF7F7F7),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20.0)),
-              ),
+            CustomButton(
+              borderRadius: BorderRadius.circular(20),
+              name: 'Começar',
               onPressed: _questionScreen,
             ),
           ],

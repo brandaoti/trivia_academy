@@ -11,12 +11,12 @@ class CustomButton extends StatelessWidget {
   //
   const CustomButton({
     Key key,
-    this.name,
-    this.primary,
-    this.onPrimary,
-    this.padding,
+    @required this.name,
+    this.primary = const Color(0xFFDA0175),
+    this.onPrimary = const Color(0xFFF7F7F7),
+    this.padding = const EdgeInsets.fromLTRB(60, 11, 60, 11),
     this.borderRadius,
-    this.onPressed,
+    @required this.onPressed,
   }) : super(key: key);
 
   @override
