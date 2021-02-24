@@ -6,6 +6,7 @@ import 'package:trivia_academy/components/quiz/answers/custom_answer.dart';
 import 'package:trivia_academy/components/quiz/questions/question.dart';
 import 'package:trivia_academy/models/questions_answers.dart';
 import 'package:trivia_academy/routes/app_routes.dart';
+import 'package:trivia_academy/screens/result_screen.dart';
 
 class Quiz extends StatefulWidget {
   //
@@ -47,7 +48,14 @@ class _QuizState extends State<Quiz> {
         _selectQuestion++;
       });
     } else {
-      Navigator.of(context).pushReplacementNamed(AppRoutes.HOME_SCREEN);
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+          builder: (ctx) => ResultScreen(
+            score: _score,
+            totalQuestion: questionList.length,
+          ),
+        ),
+      );
     }
 
     // Limpar caixa de seleção das resposta
@@ -68,7 +76,7 @@ class _QuizState extends State<Quiz> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          color: Colors.red,
+          // color: Colors.red,
           padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
           margin: EdgeInsets.fromLTRB(32, 56, 32, 10),
           // color: Colors.red,

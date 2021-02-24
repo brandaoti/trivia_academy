@@ -15,10 +15,10 @@ class QuestionScreen extends StatefulWidget {
 
 class _QuestionScreenState extends State<QuestionScreen> {
   //
-  List<QuestionAndAnswer> questionList = QuestionAndAnswer.getQuestionList();
+  // List<QuestionAndAnswer> questionList = QuestionAndAnswer.getQuestionList();
 
-  int _score = 0; // Armazena os pontos
-  int _selectQuestion = 0; // Seleciona as perguntsa
+  // int _score = 0; // Armazena os pontos
+  // int _selectQuestion = 0; // Seleciona as perguntsa
 
   @override
   Widget build(BuildContext context) {
