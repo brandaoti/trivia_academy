@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trivia_academy/components/colors/app_colors.dart';
 
 import '../components/quiz/quiz.dart';
 
@@ -19,7 +20,8 @@ class _QuestionScreenState extends State<QuestionScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Perguntas'),
+          backgroundColor: AppColors.appBar,
+
           centerTitle: true,
           // backgroundColor: Color(0xFF374952),
         ),
