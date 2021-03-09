@@ -20,8 +20,6 @@ class _QuestionScreenState extends State<QuestionScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: AppColors.appBar,
-
           centerTitle: true,
           // backgroundColor: Color(0xFF374952),
         ),

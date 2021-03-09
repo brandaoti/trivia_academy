@@ -11,14 +11,16 @@ class AppColors {
   // ! Define as cores por utilização para mudar rapidamente quando precisar
 
   // Todo - Layout -
-  static const appBar = _darkGreyBlue;
+  static const primaryColor = _darkGreyBlue;
+  static const accentColor = _pink;
+  static const appBarColor = _darkGreyBlue;
 
   // Todo - BOTÕES -
   static const btnPrimary = _pink;
   static const btnOnPrimary = _white;
 
   // Todo - TEXTOS -
-  static const textBanner = _darkGreyBlue;
+  static const headlineColor = _darkGreyBlue;
   static const textResult = _darkGreyBlue;
   static const textScore = [_pink, _darkGreyBlue];
 }

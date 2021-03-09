@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../components/buttons/custom_button.dart';
-import '../components/custom_boxshadow.dart';
+import '../components/containers/custom_boxshadow.dart';
 import '../routes/app_routes.dart';
 
 class ResultScreen extends StatefulWidget {
