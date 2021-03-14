@@ -19,7 +19,7 @@ class Question extends StatelessWidget {
           questionIndex,
           style: Theme.of(context).textTheme.subtitle1,
         ),
-        SizedBox(height: 10),
+        SizedBox(height: 16),
         Text(
           question,
           style: Theme.of(context).textTheme.subtitle2,

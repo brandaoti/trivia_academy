@@ -19,10 +19,12 @@ class AppWidget extends StatelessWidget {
         accentColor: AppColors.accentColor,
         fontFamily: 'Montserrat',
         textTheme: TextTheme(
-          headline4: Headline4TextStyle,
-          subtitle1: Subtitle1TextStyle,
-          subtitle2: Subtitle2TextStyle,
-          bodyText1: Body1TextStyle,
+          headline1: Headline,
+          headline2: HeadlineResult,
+          subtitle1: SubtitleQuestionNumber,
+          subtitle2: SubtitleQuestion,
+          bodyText1: BodyAnswer,
+          bodyText2: BodyScore,
         ),
       ),
 
