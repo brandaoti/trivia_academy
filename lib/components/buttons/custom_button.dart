@@ -24,9 +24,10 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       child: Text(name),
       style: ElevatedButton.styleFrom(
+        padding: padding,
         primary: primary,
         onPrimary: onPrimary,
-        padding: padding,
+        textStyle: TextStyle(fontWeight: FontWeight.w600),
         shape: RoundedRectangleBorder(borderRadius: borderRadius),
       ),
       onPressed: onPressed,

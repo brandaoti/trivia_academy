@@ -7,6 +7,8 @@ class HomeScreen extends StatelessWidget {
   //
   @override
   Widget build(BuildContext context) {
+    var mediaQuery = MediaQuery.of(context).size;
+
     // ! Função para navegação de tela
     void _questionScreen() {
       Navigator.push(
@@ -23,21 +25,22 @@ class HomeScreen extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: 167.0),
+            SizedBox(height: mediaQuery.height * (167.0 / 568)),
 
+            // Add logo
             Image(
               image: AssetImage('assets/logo.png'),
             ),
 
-            SizedBox(height: 24.0),
+            SizedBox(height: mediaQuery.height * (24.0 / 568)),
             Text(
               'Trivia \n Academy',
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headline1,
             ),
 
             //
-            SizedBox(height: 88.0),
+            SizedBox(height: mediaQuery.height * (88.0 / 568)),
 
             //
             CustomButton(
