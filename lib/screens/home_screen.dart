@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../components/buttons/custom_button.dart';
 
 import 'question_screen.dart';
 
@@ -6,9 +7,11 @@ class HomeScreen extends StatelessWidget {
   //
   @override
   Widget build(BuildContext context) {
+    var mediaQuery = MediaQuery.of(context).size;
+
     // ! Função para navegação de tela
     void _questionScreen() {
-      Navigator.push(
+      Navigator.pushReplacement(
         context,
         MaterialPageRoute(
           builder: (ctx) => QuestionScreen(),
@@ -22,36 +25,27 @@ class HomeScreen extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: 167.0),
+            SizedBox(height: mediaQuery.height * (167.0 / 568)),
 
+            // Add logo
             Image(
               image: AssetImage('assets/logo.png'),
             ),
 
-            SizedBox(height: 24.0),
+            SizedBox(height: mediaQuery.height * (24.0 / 568)),
             Text(
               'Trivia \n Academy',
               textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Color(0xFF374952),
-                fontSize: 32.0,
-                fontWeight: FontWeight.w800,
-              ),
+              style: Theme.of(context).textTheme.headline1,
             ),
 
             //
-            SizedBox(height: 88.0),
+            SizedBox(height: mediaQuery.height * (88.0 / 568)),
 
             //
-            ElevatedButton(
-              child: Text('Começar'),
-              style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.fromLTRB(60, 11, 60, 11),
-                primary: Color(0xFFDA0175),
-                onPrimary: Color(0xFFF7F7F7),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20.0)),
-              ),
+            CustomButton(
+              borderRadius: BorderRadius.circular(20),
+              name: 'Começar',
               onPressed: _questionScreen,
             ),
           ],
