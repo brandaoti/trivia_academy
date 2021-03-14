@@ -20,7 +20,7 @@ class ResultScreen extends StatefulWidget {
 }
 
 class _ResultScreenState extends State<ResultScreen> {
-  // Reiniciar
+  // Função para reiniciar
   void _onPlayAgain() {
     setState(() {
       Navigator.of(context).pushReplacementNamed(
@@ -31,74 +31,66 @@ class _ResultScreenState extends State<ResultScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var mediaQuery = MediaQuery.of(context).size;
+
     return Scaffold(
       //
       body: Column(
         children: [
-          Expanded(
-            child: Column(
-              // mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(height: 160),
-                widget.score == 0
-                    ? Text(
-                        'VOCÊ ERROU TODAS',
-                        style: TextStyle(
-                          color: Color(0xFF263238),
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      )
-                    : Text(
-                        'VOCÊ ACERTOU',
-                        style: TextStyle(
-                          color: Color(0xFF263238),
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(height: mediaQuery.height * (160 / 568)),
 
-                SizedBox(height: 60),
+              // Ternario para verificar os pontos
+              widget.score == 0
+                  ? Text(
+                      'VOCÊ ERROU TODAS',
+                      style: Theme.of(context).textTheme.headline2,
+                    )
+                  : Text(
+                      'VOCÊ ACERTOU',
+                      style: Theme.of(context).textTheme.headline2,
+                    ),
 
-                //
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.baseline,
-                  textBaseline: TextBaseline.alphabetic,
-                  children: [
-                    Text(
-                      "${widget.score}",
-                      style: TextStyle(
-                        color: Color(0xFFDA0175),
-                        fontSize: 80,
-                        fontWeight: FontWeight.w800,
-                      ),
+              SizedBox(height: mediaQuery.height * (60 / 568)),
+
+              // Colocando score
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.baseline,
+                textBaseline: TextBaseline.alphabetic,
+                children: [
+                  Text(
+                    "${widget.score}",
+                    style: Theme.of(context).textTheme.bodyText2,
+                  ),
+                  //
+                  Text(
+                    '/ ${widget.totalQuestion}',
+                    style: TextStyle(
+                      color: Color(0xFF263238),
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
                     ),
-                    //
-                    Text(
-                      '/ ${widget.totalQuestion}',
-                      style: TextStyle(
-                        color: Color(0xFF263238),
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+                  ),
+                ],
+              ),
+            ],
           ),
 
-          // Spacer(),
-          // !
+          Spacer(),
+
+          // Instanciando BoxShadow com botão customizado
           CustomContainerBoxShadow(
-              child: Center(
-            child: CustomButton(
-              borderRadius: BorderRadius.circular(20),
-              name: 'Jogar novamente',
-              onPressed: () => _onPlayAgain(),
+            child: Center(
+              child: CustomButton(
+                name: 'Jogar novamente',
+                borderRadius: BorderRadius.circular(20),
+                onPressed: () => _onPlayAgain(),
+              ),
             ),
-          ))
+          ),
         ],
       ),
     );
