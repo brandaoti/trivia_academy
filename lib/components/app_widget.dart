@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:trivia_academy/components/colors/app_colors.dart';
 
 import '../routes/app_routes.dart';
@@ -9,6 +10,11 @@ import 'app_style.dart';
 class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    //
+    SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown],
+    );
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Quiz',

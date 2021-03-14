@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
 
     // ! Função para navegação de tela
     void _questionScreen() {
-      Navigator.push(
+      Navigator.pushReplacement(
         context,
         MaterialPageRoute(
           builder: (ctx) => QuestionScreen(),
