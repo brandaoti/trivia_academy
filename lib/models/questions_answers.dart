@@ -83,7 +83,7 @@ class QuestionAndAnswer {
     // 6
     questions.add(
       QuestionAndAnswer(
-        'Em Vingadores quantas pessoas Loki matou em dois dias?',
+        'Em Vingadores, quantas pessoas Loki matou em dois dias?',
         '65',
         '50',
         '80',
