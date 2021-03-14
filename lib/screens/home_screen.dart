@@ -33,7 +33,7 @@ class HomeScreen extends StatelessWidget {
             Text(
               'Trivia \n Academy',
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.headline4,
             ),
 
             //

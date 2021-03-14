@@ -20,9 +20,9 @@ class QuestionAndAnswer {
         'O que é Flutter?',
         'Uma linguagem de programação.',
         'Um framework para desenvolvimento de aplicações mobile, web e desktop.',
-        'Um framework desenvolvido exclusivamente para criação de sites.',
-        'Uma engine de jogos',
-        1,
+        'Uma engine para criação de jogos.',
+        'Um framework para desenvolvimento apenas para web.',
+        2,
       ),
     );
     // 1

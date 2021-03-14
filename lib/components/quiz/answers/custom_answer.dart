@@ -36,7 +36,7 @@ class CustomAnswer extends StatelessWidget {
         ],
       ),
       child: RadioListTile(
-        title: Text(title),
+        title: Text(title, style: Theme.of(context).textTheme.bodyText1),
         value: value,
         groupValue: groupValue,
         onChanged: onChanged,

@@ -21,6 +21,6 @@ class AppColors {
 
   // Todo - TEXTOS -
   static const headlineColor = _darkGreyBlue;
-  static const textResult = _darkGreyBlue;
+  static const textColor = _darkGreyBlue;
   static const textScore = [_pink, _darkGreyBlue];
 }

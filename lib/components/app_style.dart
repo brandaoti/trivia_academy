@@ -13,7 +13,7 @@ const String FontNameDefault = 'Montserrat';
 const Headline4TextStyle = TextStyle(
   fontFamily: FontNameDefault,
   fontWeight: FontWeight.w800,
-  fontSize: MediumTextSize,
+  fontSize: LargeTextSize,
   color: AppColors.headlineColor,
 );
 
@@ -21,19 +21,19 @@ const Subtitle1TextStyle = TextStyle(
   fontFamily: FontNameDefault,
   fontWeight: FontWeight.w400,
   fontSize: Subtitle1TextSize,
-  color: AppColors.question,
+  color: AppColors.textColor,
 );
 
-const Subtile2TextStyle = TextStyle(
+const Subtitle2TextStyle = TextStyle(
   fontFamily: FontNameDefault,
   fontWeight: FontWeight.w400,
   fontSize: Subtitle2TextSize,
-  color: AppColors.question,
+  color: AppColors.textColor,
 );
 
 const Body1TextStyle = TextStyle(
   fontFamily: FontNameDefault,
   fontWeight: FontWeight.w400,
   fontSize: BodyTextSize,
-  color: Colors.red,
+  color: AppColors.textColor,
 );

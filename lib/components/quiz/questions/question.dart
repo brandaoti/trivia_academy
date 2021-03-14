@@ -17,11 +17,12 @@ class Question extends StatelessWidget {
       children: [
         Text(
           questionIndex,
-          style: Theme.of(context).textTheme.bodyText1,
+          style: Theme.of(context).textTheme.subtitle1,
         ),
         SizedBox(height: 10),
         Text(
           question,
+          style: Theme.of(context).textTheme.subtitle2,
         ),
         // !
       ],
