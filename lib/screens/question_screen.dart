@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:trivia_academy/components/colors/app_colors.dart';
 
 import '../components/quiz/quiz.dart';
 
