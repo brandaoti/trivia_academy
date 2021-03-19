@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../components/quiz/quiz.dart';
 
@@ -19,8 +20,8 @@ class _QuestionScreenState extends State<QuestionScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          title: Text('Trivia Academy'),
           centerTitle: true,
-          // backgroundColor: Color(0xFF374952),
         ),
 
         //

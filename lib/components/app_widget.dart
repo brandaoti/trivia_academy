@@ -15,6 +15,16 @@ class AppWidget extends StatelessWidget {
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown],
     );
 
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarBrightness: Brightness.light,
+        statusBarIconBrightness: Brightness.dark,
+        systemNavigationBarColor: Colors.white,
+        systemNavigationBarIconBrightness: Brightness.dark,
+      ),
+    );
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Quiz',
@@ -24,6 +34,7 @@ class AppWidget extends StatelessWidget {
         primaryColor: AppColors.primaryColor,
         accentColor: AppColors.accentColor,
         fontFamily: 'Montserrat',
+        brightness: Brightness.light,
         textTheme: TextTheme(
           headline1: Headline,
           headline2: HeadlineResult,
